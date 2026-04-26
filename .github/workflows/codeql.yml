@@ -91,7 +91,7 @@ jobs:
       run: |
         echo "Installazione delle dipendenze per U-Boot..."
         sudo apt-get update
-        sudo apt-get install -y bc bison flex libssl-dev build-essential
+        sudo apt-get install -y bc bison flex libssl-dev build-essential libgnutls28-dev uuid-dev
     
         echo "Configurazione di U-Boot per ambiente Sandbox..."
         make sandbox_defconfig
