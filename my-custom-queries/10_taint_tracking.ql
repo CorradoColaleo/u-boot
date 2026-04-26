@@ -1,5 +1,9 @@
 /**
+ * @name Network Byte Swap flows to memcpy
+ * @description Dati provenienti dalla rete non sanitizzati finiscono in una funzione memcpy.
  * @kind path-problem
+ * @problem.severity error
+ * @id cpp/network-byte-swap-memcpy
  */
 import cpp
 import semmle.code.cpp.dataflow.TaintTracking
