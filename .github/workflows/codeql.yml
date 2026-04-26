@@ -91,13 +91,13 @@ jobs:
       run: |
         echo "Installazione delle dipendenze per U-Boot..."
         sudo apt-get update
-        sudo apt-get install -y bc bison flex libssl-dev build-essential libgnutls28-dev uuid-dev libsdl2-dev python3-dev swig python3-setuptools
+        sudo apt-get install -y bc bison flex libssl-dev build-essential libgnutls28-dev uuid-dev libsdl2-dev python3-dev swig python3-setuptools efitools
     
         echo "Configurazione di U-Boot per ambiente Sandbox..."
         make sandbox_defconfig
     
-        echo "Compilazione del codice (Singolo Thread)..."
-        make
+        echo "Compilazione del codice..."
+        make -j$(nproc)
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v4
