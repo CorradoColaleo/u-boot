@@ -96,8 +96,8 @@ jobs:
         echo "Configurazione di U-Boot per ambiente Sandbox..."
         make sandbox_defconfig
     
-        echo "Compilazione del codice..."
-        make -j$(nproc)
+        echo "Compilazione del codice (Singolo Thread)..."
+        make
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v4
